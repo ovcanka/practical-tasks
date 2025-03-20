@@ -1,0 +1,22 @@
+package com.walking.lesson18_instanceof_getClass.Task1;
+
+public class Animal {
+    private final String className;
+    //    Выполнение доп. условия. Если методы наследников лишь обращаются к sound() -
+//    нам необходимо делать вывод звука животного в этом классе. Значит, звук животного
+//    нужно куда-то записать
+    private final String sound;
+
+    protected Animal(String className, String sound) {
+        this.className = className;
+        this.sound = sound;
+    }
+
+    protected void sound() {
+        System.out.println(sound);
+    }
+
+    public String getClassName() {
+        return className;
+    }
+}

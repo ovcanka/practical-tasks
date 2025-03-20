@@ -1,4 +1,8 @@
 package com.walking.lesson18_instanceof_getClass.task1_instanceof;
+import com.walking.lesson18_instanceof_getClass.Task1.Animal;
+import com.walking.lesson18_instanceof_getClass.Task1.Cat;
+import com.walking.lesson18_instanceof_getClass.Task1.Cow;
+import com.walking.lesson18_instanceof_getClass.Task1.Dog;
 
 /**
  * Реализовать задачу
@@ -7,5 +11,27 @@ package com.walking.lesson18_instanceof_getClass.task1_instanceof;
  */
 public class Main {
     public static void main(String[] args) {
+        Animal[] animals = new Animal[]{new Cat(), new Dog(), new Cow()};
+
+        soundAll(animals);
+    }
+
+    private static void soundAll(Animal[] animals) {
+        for (Animal animal : animals) {
+            sound(animal);
+        }
+    }
+
+    //    Используя поле класса Animal, определяем, какой настоящий класс обрабатываемого объекта
+    private static void sound(Animal animal) {
+        if (animal instanceof Cat ) {
+            ((Cat) animal).meow();
+        } else if (animal instanceof Dog) {
+            ((Dog) animal).woof();
+        } else if (animal instanceof Cow) {
+            ((Cow) animal).moo();
+        } else {
+            System.out.println("Unknown animal!");
+        }
     }
 }
