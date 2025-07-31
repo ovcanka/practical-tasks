@@ -16,6 +16,47 @@ package com.walking.lesson28_generics1.task4;
  */
 public class Main {
     public static void main(String[] args) {
-        int a = 0;
+
+    }
+
+}
+
+class Stekclass<T> {
+
+    private T[] Stek;
+
+    Stekclass(T[] Stek) {
+        this.Stek = Stek;
+    }
+
+    public T findMean(T Mean) {
+        for (T a : this.Stek) {
+            if (a.equals(Mean)) {
+                return Mean;
+            }
+        }
+        throw new RuntimeException(Mean + " = not found");
+    }
+
+    public void deleteMean(T Mean) {
+        int i = 0;
+        for (T a : this.Stek) {
+            if (a.equals(Mean)) {
+                break;
+            }
+            i++;
+        }
+        if (i != Stek.length) {
+            for (int j = i; j < Stek.length-1; j++) {
+                    Stek[j] = Stek[j + 1];
+            }
+            // необходимо создать параметризированный массив и записать в него изменненный "Stek", а также добавить решение учитывая что  удаляемый компонент последний
+
+
+        }
+
+
+
+
     }
 }

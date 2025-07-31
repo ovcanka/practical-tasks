@@ -14,7 +14,7 @@ public class Main {
         int index = new Scanner(System.in).nextInt();
 
         System.out.println((int)a.degree(index));
-        System.out.println(b.degree(index));
+        System.out.println((int)b.degree(index));
     }
 }
 

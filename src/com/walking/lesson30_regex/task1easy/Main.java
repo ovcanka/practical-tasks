@@ -1,5 +1,8 @@
 package com.walking.lesson30_regex.task1easy;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Реализуйте boolean-метод, валидирующий входящую строку.
  * Метод должен возвращать true,
@@ -12,5 +15,15 @@ package com.walking.lesson30_regex.task1easy;
  */
 public class Main {
     public static void main(String[] args) {
+        String number = "+7 (917) 952-94-09";
+
+        System.out.println(istrue(number));
+
+    }
+    private static boolean istrue (String number) {
+        Pattern pattern = Pattern.compile("\\+\\d \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}");
+        Matcher matcher = pattern.matcher(number);
+
+     return matcher.matches();
     }
 }
